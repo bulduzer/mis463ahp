@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <link rel="stylesheet" href="tick.css">
+        
+        <!--Datepicker-->
+        <title>AHP Calculator</title>
+        <!--Google Font-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+        <!--Stylesheet-->
+        <link rel="stylesheet" href="datepicker.css">
+
+        <!-- Double slider-->
+        <link rel="stylesheet" href="doubleslider.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+        <!-- Checkbox dropdown-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS -->
+        <link rel="stylesheet" href="style_dropdown2.css">                        
+        <!-- Fontawesome CDN Link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <!-- Checkbox-->
+        <link rel="stylesheet" href="checkbox.css">
+        <title>Custom Checkbox</title>
+
+        <!--Info button-->
+        <link rel="stylesheet" href="infobutton.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+        <!--Calculate button-->
+        <link rel="stylesheet" href="calculatebutton.css">
+        
+        <!--Output Table-->
+        <link rel="stylesheet" href="table.css">
+
+        <!--Scroll Top-->
+        <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet"
+    />
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="scrolltop.css" />
+
+        
+        
+    </head>
+    <body>
+        
+        <script src="generateTable.js"></script>
+        <script src="CalculateAhp.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <script>
+        function updateTextInput(val) {
+            document.getElementsByClassName('textInput').value=Math.abs(val);
+        }
+    </script>
+    
+
+
+    <div class="vstack">
+        <br>
+        <h1 style="text-align:center">Find Game</h1>
+        <br>
+        <p style="text-align:center"> Our decision support system uses a two-stage process to help you find the games that match your preferences. Use the filters<br>on this page to narrow down the game options and then use the AHP Range Slider to fine-tune your recommendations.</p>
+        <br>
+        
+    
+
+        <div class="hstack" id="checkboxdropdowmitems" style="align-self: center;"> 
+        
+            
+             <!--dropdown1-->
+            <div class="container" name="Select Genre" id="genre">
+                <div class="select-btn" id="select_genre">
+                    <span class="btn-text" style="color:#fff;">Select Genre</span>
+                    <span class="arrow-dwn">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </span>
+                </div>
+            
+                <ul class="list-items" id="genre-dropdown">
+                    <li class="item">
+                        <span class="checkbox">
+                            <i class="fa-solid fa-check check-icon"></i>
+                        </span>
+                        <span class="item-text">Indie</span>
+                    </li>
+                    <li class="item">
+                        <span class="checkbox">
+                            <i class="fa-solid fa-check check-icon"></i>
+                        </span>
+                        <span class="item-text">Action</span>
+                    </li>
+                    <li class="item">
+                        <span class="checkbox">
+                            <i class="fa-solid fa-check check-icon"></i>
+                        </span>
+                        <span class="item-text">Strategy</span>
+                    </li>
+                    <li class="item">
+                        <span class="checkbox">
+                            <i class="fa-solid fa-check check-icon"></i>
+                        </span>
+                        <span class="item-text">Casual</span>
+                    </li>
+                    <li class="item">
+                        <span class="checkbox">
+                            <i class="fa-solid fa-check check-icon"></i>
+                        </span>
+                        <span class="item-text">RPG</span>
+                    </li>
+                    <li class="item">
+                        <span class="checkbox">
+                            <i class="fa-solid fa-check check-icon"></i>
+                        </span>
+                        <span class="item-text">Adventure</span>
+                    </li>
+                    <li class="item">
+                        <span class="checkbox">
+                            <i class="fa-solid fa-check check-icon"></i>
+                        </span>
+                        <span class="item-text">Simulation</span>
+                    </li>
+                    <li class="item">
+                        <span class="checkbox">
+                            <i class="fa-solid fa-check check-icon"></i>
+                        </span>
+                        <span class="item-text">Sports</span>
+                    </li>
+                    <li class="item">
+                        <span class="checkbox">
+                            <i class="fa-solid fa-check check-icon"></i>
+                        </span>
+                        <span class="item-text">Racing</span>
+                    </li>
+                </ul>
+            </div> 
+    
+        
+            <!--dropdown2-->
+            <div class="container" name="Select Operating System" id="operating_system">
+                <div class="select-btn" id="os">
+                    <span class="btn-text" style="color:#fff";>Select Operating System</span>
+                    <span class="arrow-dwn">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </span>
+                </div>
+            
+                <ul class="list-items" id="os-dropdown">
+                    <li class="item">
+                        <span class="checkbox">
+                            <i class="fa-solid fa-check check-icon"></i>
+                        </span>
+                        <span class="item-text">Windows</span>
+                    </li>
+                    <li class="item">
+                        <span class="checkbox">
+                            <i class="fa-solid fa-check check-icon"></i>
+                        </span>
+                        <span class="item-text">Mac OS</span>
+                    </li>
+                    <li class="item">
+                        <span class="checkbox">
+                            <i class="fa-solid fa-check check-icon"></i>
+                        </span>
+                        <span class="item-text">Linux</span>
+                    </li>
+                </ul>
+            </div> 
+        </div>
+        <br>
+        <span style="height:10px;"></span>
+
+     <div class="hstack" style="align-self: center;">
+
+         <!--dropdown3-->
+         <div class="container" name="Select Rating" id="positive_review">
+            <div class="select-btn" id="review">
+                <span class="btn-text" style="color:#fff;"> Select Rating </span>
+                <span class="arrow-dwn">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </span>
+            </div>
+        
+            <ul class="list-items" id="prp-dropdown">
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">5</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">4 and 4+</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">3 and 3+</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">2 and 2+</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">1 and 1+</span>
+                </li>
+                
+            </ul>
+        </div> 
+
+        <!--Dropdown4-->
+        
+        <div class="container"  id="purchase" name="Select Number Of Purchases" >
+            <div class="select-btn" id="no_of_purchases">
+                <span class="btn-text" style="color:#fff;">Select Number of Purchases</span>
+                <span class="arrow-dwn">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </span>
+            </div>
+        
+            <ul class="list-items" id="purchase-dropdown">
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">0+</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">50 000+</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">100 000+</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">500 000+</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">1 000 000+</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">10 000 000+</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">20 000 000+</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">50 000 000+</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">100 000 000+</span>
+                </li>
+            </ul>
+        </div> 
+
+         <!--dropdown2-->
+         <div class="container"  name="Select Publisher" id="publisher">
+            <div class="select-btn" id="select_publisher">
+                <span class="btn-text" style="color:#fff;">Select Publisher</span>
+                <span class="arrow-dwn">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </span>
+            </div>
+        
+            <ul class="list-items" id="publisher-dropdown">
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">Big Fish Games</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">Strategy First </span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">Ubisoft</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">Square Enix</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">THQ Nordic</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">1C Entertainment</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">Choice of Games</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">Sekai Project</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">Dagestan Technology</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">Degica</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">Plug In Digital</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">SEGA </span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">KISS ltd</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">Electronic Arts</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">BANDAI NAMCO Entertainment</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">505 Games</span>
+                </li>
+                <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <span class="item-text">Capcom</span>
+                </li>
+            </ul>
+        </div> 
+        
+    </div> 
+    <span style="height:0.7cm;"></span>
+
+        <div class="hstack">  
+
+            <!--Double Range Slider -->
+            <div class="wrapper w-30" style="align-self: center;">
+               <header>
+               <p>Enter min and max price</p>
+               </header>
+               <div class="price-input">
+               <div class="field">
+                   <span>Min</span>
+                   <input type="number" class="input-min" value="0" >
+                   <span> &nbsp;&nbsp;$ </span>
+               </div>
+               <div class="separator"> </div>
+               <div class="field">
+                   <span>Max</span>
+                   <input type="number" class="input-max" value="300"  >
+                   <span> &nbsp;&nbsp;$ </span>
+               </div>
+               </div>
+               <div class="slider" >
+               <div class="progress"></div>
+               </div>
+               <div class="range-input">
+               <input type="range" class="range-min" min="0" max="200" value="0" step="10">
+               <input type="range" class="range-max" min="0" max="300" value="300" step="10">
+               </div>
+           </div>
+           
+           <span style="width: 10px;"> </span>
+
+       <!--Checkbox-->
+       <div id="boxbox" style="width:max-content; height:min-content" >
+           <header>
+           <p>Select Option:</p>
+           </header>
+           <div class="checkbox-container">
+               <input type="checkbox" id="cb1" >
+               <label for="cb1">English Language Support</label>
+           </div>
+         <br>
+         <div class="checkbox-container">
+           <input type="checkbox" id="cb2" >
+           <label for="cb2">Multiplayer Mode</label>
+         </div>
+       </div>
+
+       <span style="width: 10px;"> </span>
+
+       <div  id= "wrapperr" style="width:max-content; height:min-content;"> 
+
+           <!--Datepicker-->
+           <p> Release Date</p> 
+           From
+           <input type="date" id="date1">
+           &nbsp&nbsp
+           To
+           <input type="date" id="date2">
+
+        </div> 
+       </div>
+        <span style="height:10px;"></span>
+       <span style="height: 2cm;"> </span>
+      
+        <!--Range -->
+        <div  id= "wrapperr" style="width:1000px"> 
+
+            <div class="vstack">
+
+                <div class="wrapper_info ms-auto">
+                    <div class="icon facebook">
+                       <div class="tooltip">
+                        <p style="font-size:13px;"> Move the cursor towards to option you prefer. For instance, moving the cursor towards the price increases the importance of the price compared to the number of reviews. 1 indicating that the criteria being compared are equally important and 9 indicating that one is absolutely more important than the other. </p>
+                       </div>
+                       <span><i class="questionMark" style="font-size: 20px;  font-weight: bold; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">i</i></span>
+                    </div>
+
+                    <br>
+                    
+                 </div>
+                <header>
+                    <h2>AHP Range Slider</h2>
+                    <p style="text-align:left">Use the range slider to make pairwise comparisons between criteria and choose their importance in order to help the system recommend the best games for you.
+        
+                </header>
+                
+                
+            </div>
+            
+           <br>
+        <div class="vstack" id="slideritems">
+            
+            <div class="hstack">
+                <div style= "font-size:16px; max-width:85px; min-width:85px; text-align: right;">
+                    Price
+                </div>
+                <span class="form-range" style="width:10px;"></span>
+                <div class="form-range";>
+                    <input type="range" class="form-range textInput"
+                    min="-8" max="8" step="1" value="0"
+                    data-toggle="true"
+                    id="customRange1" list="my-datalist"
+                    onchange="updateTextInput(this.value);">
+                </div>
+                <span class="form-range" style="width:10px;"></span>
+                <div style= "font-size:16px; max-width:85px; min-width:85px; text-align: left;">
+                    Number of Reviews
+                </div>
+                
+            </div>
+            <datalist id="my-datalist">
+                <option>9</option>
+                
+                <option>7</option>
+                
+                <option>5</option>
+                
+                <option>3</option>
+                
+                <option>1</option>
+                
+                <option>3</option>
+            
+                <option>5</option>
+                
+                <option>7</option>
+                
+                <option>9</option>
+            </datalist>
+
+            
+            <div class="hstack">
+                <div style= "font-size:16px; max-width:85px; min-width:85px; text-align: right;">
+                    Price
+                </div>
+                <span class="form-range" style="width:10px;"></span>
+                
+
+                <div class="form-range">
+                    <input type="range" class="form-range textInput"
+                    min="-8" max="8" step="1" value="0"
+                    data-toggle="true"
+                    id="customRange1" list="my-datalist"
+                    onchange="updateTextInput(this.value);">
+                </div>
+                <span class="form-range" style="width:10px;"></span>
+                <div style= "font-size:16px; max-width:85px; min-width:85px; text-align: left;">
+                    Positive Reviews %
+                </div>
+            </div>
+            <datalist id="my-datalist">
+                <option>9</option>
+                
+                <option>7</option>
+                
+                <option>5</option>
+                
+                <option>3</option>
+                
+                <option>1</option>
+                
+                <option>3</option>
+            
+                <option>5</option>
+                
+                <option>7</option>
+                
+                <option>9</option>
+            </datalist>
+
+            
+            <div class="hstack">
+                <div style= "font-size:16px; max-width:85px; min-width:85px; text-align: right;">
+                    Price
+                </div>
+                <span class="form-range" style="width:10px;"></span>
+                <div class="form-range">
+                    <input type="range" class="form-range textInput"
+                    min="-8" max="8" step="1" value="0"
+                    data-toggle="true"
+                    id="customRange1" list="my-datalist"
+                    onchange="updateTextInput(this.value);">
+                </div>
+                <span class="form-range" style="width:10px;"></span>
+                <div style= "font-size:16px; max-width:85px; min-width:85px; text-align: left;">
+                    Average Playtime
+                </div>
+                
+            </div>
+            <datalist id="my-datalist">
+                <option>9</option>
+                
+                <option>7</option>
+                
+                <option>5</option>
+                
+                <option>3</option>
+                
+                <option>1</option>
+                
+                <option>3</option>
+            
+                <option>5</option>
+                
+                <option>7</option>
+                
+                <option>9</option>
+            </datalist>
+
+        
+            <div class="hstack">
+                <div style= "font-size:16px; max-width:85px; min-width:85px; text-align: right;">
+                    Number of Reviews
+                    
+                </div>
+                <span class="form-range" style="width:10px;"></span>
+                <div class="form-range" >
+                    <input type="range" class="form-range textInput"
+                    min="-8" max="8" step="1" value="0"
+                    data-toggle="true"
+                    id="customRange1" list="my-datalist"
+                    onchange="updateTextInput(this.value);">
+                </div>
+                <span class="form-range" style="width:10px;"></span>
+                <div style= "font-size:16px; max-width:85px; min-width:85px; text-align: left;">
+                    Positive Reviews %
+                </div>
+                
+            </div>
+            <datalist id="my-datalist">
+                <option>9</option>
+                
+                <option>7</option>
+                
+                <option>5</option>
+                
+                <option>3</option>
+                
+                <option>1</option>
+                
+                <option>3</option>
+            
+                <option>5</option>
+                
+                <option>7</option>
+                
+                <option>9</option>
+            </datalist>
+
+            <div class="hstack">
+                <div style= "font-size:16px; max-width:85px; min-width:85px; text-align: right;">
+                    Number of Reviews
+                </div>
+                <span class="form-range" style="width:10px;"></span>
+                
+                <div class="form-range">
+                    <input type="range" class="form-range textInput"
+                    min="-8" max="8" step="1" value="0"
+                    data-toggle="true"
+                    id="customRange1" list="my-datalist"
+                    onchange="updateTextInput(this.value);">
+                </div>
+                <span class="form-range" style="width:10px;"></span>
+                <div style= "font-size:16px; max-width:85px; min-width:85px; text-align: left;">
+                    Average Playtime
+                </div>
+                
+            </div>
+            <datalist id="my-datalist">
+                <option>9</option>
+                
+                <option>7</option>
+                
+                <option>5</option>
+                
+                <option>3</option>
+                
+                <option>1</option>
+                
+                <option>3</option>
+            
+                <option>5</option>
+                
+                <option>7</option>
+                
+                <option>9</option>
+            </datalist>
+
+
+            <div class="hstack">
+                <div style= "font-size:16px; max-width:85px; min-width:85px; text-align: right;">
+                    Positive Reviews %
+                </div>
+                <span class="form-range" style="width:10px;"></span>
+               
+                <div class="form-range">
+                    <input type="range" class="form-range textInput"
+                    min="-8" max="8" step="1" value="0"
+                    data-toggle="true"
+                    id="customRange1" list="my-datalist"
+                    onchange="updateTextInput(this.value);">
+                </div>
+                <span class="form-range" style="width:10px;"></span>
+                <div style= "font-size:16px; max-width:85px; min-width:85px; text-align: left;">
+                     Average Playtime
+                </div>
+                
+            </div>
+            <datalist id="my-datalist">
+                <option>9</option>
+                
+                <option>7</option>
+                
+                <option>5</option>
+                
+                <option>3</option>
+                
+                <option>1</option>
+                
+                <option>3</option>
+            
+                <option>5</option>
+                
+                <option>7</option>
+                
+                <option>9</option>
+            </datalist>
+
+            <p class="btn" onclick=main() style="align-self: center;">Find</p>
+           
+        
+        </div>
+    </div>
+</div>
+<br>
+<!--Table message-->
+<p style="color:#00D26A;font:8px; align-self:center;font-weight:500;" id="tableMessage"></p>
+<p style="color:#00D26A;font:8px; align-self:center;font-weight:500;" id="tableMessage2"></p>
+
+<span style="height:2cm;"></span>
+ 
+         
+<div class="hstack">
+    <table id="myTable"></table>
+
+            <!--scrolltop-->
+
+            <div id="progress">
+                <span id="progress-value">⬆</span>
+              </div>
+    
+
+</div>
+  
+            
+        
+        <!--Script dropdown2-->
+        <script src="script_dropdown.js"></script>
+        <!--Script double slider-->
+        <script src="script.js"></script>
+        <!--Script Scrolltop-->
+        <script src="scrolltop.js"></script>
+
+    </body>
+</html>

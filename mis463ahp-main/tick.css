@@ -1,0 +1,30 @@
+
+
+datalist {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top:-3px;
+    padding: 3px 98px 47px;
+    font-size: 13px;
+    
+}
+
+
+#wrapperr {
+    align-content: center;
+    margin: 0 auto;
+    border: white;
+    border-radius: 10px;
+    padding: 30px;
+    background-color:#fff;
+    width: 900px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+    
+  
+}
+
+ 
